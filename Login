@@ -1,0 +1,32 @@
+package com.selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class LoginPage {
+
+  public static void main(String[] args) throws InterruptedException {
+  System.setProperty("webdriver.gecko.driver","/home/lab-01-09/Desktop/SeleniumJars/driver/geckodriver");
+  WebDriver driver=new FirefoxDriver();
+  System.out.println("Browser opened");
+  Thread.sleep(1000);
+  
+  driver.get("https://www.saucedemo.com/");
+  System.out.println("site opened");
+  Thread.sleep(1000);
+  
+  driver.findElement(By.name("username")).sendKeys("standard_user");
+  System.out.println("username typed");
+  Thread.sleep(1000);
+  
+  driver.findElement(By.name("password")).sendKeys("secret_sauce");
+  System.out.println("password typed");
+  Thread.sleep(1000);
+  
+  driver.navigate().to("https://www.saucedemo.com/inventory.html"); 
+  
+     }
+  }
+
+
